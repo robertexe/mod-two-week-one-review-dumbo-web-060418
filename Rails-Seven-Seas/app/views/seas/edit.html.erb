@@ -1,28 +1,37 @@
+<div class="container">
 <%= form_for @sea do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
-
+  <%= f.text_field :name, class: "form-control"%>
+  <br>
   <%= f.label :temperature %>
-  <%= f.number_field :temperature %>
-
+  <%= f.number_field :temperature, class: "form-control" %>
+  <br>
   <%= f.label :bio %>
-  <%= f.text_area :bio %>
-
+  <%= f.text_area :bio, class: "form-control" %>
+  <br>
   <%= f.label :image_url %>
-  <%= f.text_field :image_url %>
-
+  <%= f.text_field :image_url, class: "form-control" %>
+  <br>
   <%= f.label :mood %>
-  <%= f.text_field :mood %>
-
+  <%= f.text_field :mood, class: "form-control" %>
+  <br>
   <%= f.label :favorite_color %>
-  <%= f.text_field :favorite_color %>
-
+  <%= f.text_field :favorite_color, class: "form-control" %>
+  <br>
   <%= f.label :scariest_creature %>
-  <%= f.text_field :scariest_creature %>
-
+  <%= f.text_field :scariest_creature, class: "form-control" %>
+  <br>
   <%= f.label :has_mermaids %>
-  <%= f.check_box :has_mermaids %>
-
-  <%=  f.submit %>
+  <%= f.check_box :has_mermaids, class: "form-control" %>
+  <br>
+  <%=  f.submit class: "btn btn-primary"%>
 
   <% end %>
+<br>
+  <%= button_to "DESTROY", "/seas/#{@sea.id}", method: :delete, class: "btn btn-danger" %>
+</div>
+  <!-- <form action="/seas/<%=@sea.id%>" method="POST">
+    < <input type="hidden" name="authenticity_token">
+    <input type="hidden" id="hidden" name="_method" value="delete"/>
+    <input type="submit" value="delete"/>
+  </form> -->
